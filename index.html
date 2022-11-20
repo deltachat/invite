@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Delta Chat Invitation</title>
+    <!-- todo generic meta tags -->
+</head>
+<body>
+    <div>
+        <span id="name"></span>
+
+        After installing deltachat click on this link:<br />
+        <a href="#" id="open-in-dc">Open in Deltachat</a>
+    </div>
+
+    <script>
+        const hash = new URL(document.URL).hash;
+        document.getElementById("open-in-dc").href = hash.substr(1)
+        // todo parse link and displat name
+        document.getElementById("name").innerText = hash
+    </script>
+</body>
+</html>
