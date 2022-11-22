@@ -14,9 +14,9 @@
 
         div#box {
            border-radius: 24px;
-           background-color: #333;
+           background-color: rgb(72, 199, 142);
            padding: 16px;
-           box-shadow: rgba(0, 0, 0, 0.4    ) 0px 5px 15px;
+           box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 15px;
 
            max-width:640px;
            margin-left: auto;
@@ -26,7 +26,7 @@
 
         p {
             text-align: center;
-            color: #ccc;
+            color: #fff;
         }
 
         a {
@@ -38,21 +38,19 @@
 <body>
     <div id="box">
         <p>
-            You are invited to contact<br>
-        </p>
-
-        <p>
+            Say hello to
             <b id="name">NAME</b>
+            👋
         </p>
 
         <p>
             Step 1:<br>
-            If not yet done, <a href="https://download.delta.chat">Install Delta Chat</a>
+            If not yet done, <a href="https://download.delta.chat" target="_blank">Install Delta Chat</a>
         </p>
 
         <p>
             Step 2:<br>
-            <a id="dc-link" href="">Open chat with <b>NAME</b> in Delta Chat</a>
+            <a id="dc-link" href="">Tap to chat with <b id="name2">NAME</b></a>
         <p>
     </div>
 
@@ -71,6 +69,7 @@
 
         // todo parse link and display name
         document.getElementById("name").innerText = searchParams.get("n");
+        document.getElementById("name2").innerText = searchParams.get("n");
     </script>
 </body>
 </html>
