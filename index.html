@@ -5,20 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Delta Chat Invitation</title>
     <!-- todo generic meta tags -->
+    <style>
+        body {
+            font-family: Avant Garde,Avantgarde,Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+            font-size: 32px;
+
+        }
+
+        div#box {
+           border-radius: 24px;
+           background-color: #333;
+           padding: 16px;
+           box-shadow: rgba(0, 0, 0, 0.4    ) 0px 5px 15px;
+
+           max-width:640px;
+           margin-left: auto;
+           margin-top: 32px;
+           margin-right: auto;
+        }
+
+        p {
+            text-align: center;
+            color: #ccc;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <div>
-        <span id="name"></span>
+    <div id="box">
+        <p>
+            You are invited to contact<br>
+        </p>
 
-        After installing deltachat click on this link:<br />
-        <a href="#" id="open-in-dc">Open in Deltachat</a>
+        <p>
+            <b id="name">NAME</b>
+        </p>
+
+        <p>
+            Step 1:<br>
+            If not yet done, <a href="https://download.delta.chat">Install Delta Chat</a>
+        </p>
+
+        <p>
+            Step 2:<br>
+            <a id="dc-link" href="">Open chat with <b>NAME</b> in Delta Chat</a>
+        <p>
     </div>
 
     <script>
-        const hash = new URL(document.URL).hash;
-        document.getElementById("open-in-dc").href = hash.substr(1)
-        // todo parse link and displat name
-        document.getElementById("name").innerText = hash
+        // get the whole OPENPGP4FPR:<FPR>#n=<NAME>... url
+        var openpgp4fprStr = new URL(document.URL).hash.substr(1);
+        if (openpgp4fprStr.substr(0, 12).toUpperCase() != "OPENPGP4FPR:") {
+            openpgp4fprStr = "OPENPGP4FPR:" + openpgp4fprStr;
+        }
+
+        // construct dummy URL to extract parameters from it
+        var searchParams = new URL("https://foo.org/bar?" + new URL(openpgp4fprStr).hash.substr(1)).searchParams;
+
+        var link = document.getElementById("dc-link");
+        link.setAttribute("href", openpgp4fprStr);
+
+        // todo parse link and display name
+        document.getElementById("name").innerText = searchParams.get("n");
     </script>
 </body>
 </html>
