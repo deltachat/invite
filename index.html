@@ -55,11 +55,9 @@
     </div>
 
     <script>
-        // get the whole OPENPGP4FPR:<FPR>#n=<NAME>... url
+        // convert the hash `#<FPR>&n=<NAME>...` to an `OPENPGP4FPR:<FPR>#n=<NAME>...` url
         var openpgp4fprStr = new URL(document.URL).hash.substr(1);
-        if (openpgp4fprStr.substr(0, 12).toUpperCase() != "OPENPGP4FPR:") {
-            openpgp4fprStr = "OPENPGP4FPR:" + openpgp4fprStr;
-        }
+        openpgp4fprStr = "OPENPGP4FPR:" + openpgp4fprStr.replace(/&/, "#")
 
         // construct dummy URL to extract parameters from it
         var searchParams = new URL("https://foo.org/bar?" + new URL(openpgp4fprStr).hash.substr(1)).searchParams;
