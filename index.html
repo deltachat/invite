@@ -16,7 +16,7 @@
             margin: 0;
 
             font-family: Arial,Avant Garde,Avantgarde,Century Gothic,CenturyGothic,AppleGothic,sans-serif;
-            font-size: 22pt;
+            font-size: 18pt;
 
             background: url('https://raw.githubusercontent.com/deltachat/interface/master/background/background_hd.jpg');
             background-size: 500px;
@@ -53,13 +53,13 @@
             margin-right: var(--pad);
         }
 
-        div#box {
+        #box {
            border-radius: 16px;
            background: white;
-           padding: 16px;
+           padding: 15px;
            box-shadow: 0px 0px 10px #ccc;
 
-           max-width:640px;
+           max-width: 420px;
            margin-left: auto;
            margin-top: 32px;
            margin-right: auto;
@@ -67,12 +67,19 @@
            text-align: center;
         }
 
+        @media (max-width: 450px) {
+
+            #box {
+                margin: 15px;
+            }
+        }
+
         #dc-link {
             padding: 15px;
             border-radius: 30px;
 
             font-weight: bold;
-            font-size: 50%;
+            font-size: 60%;
             text-transform: uppercase;
             text-decoration: none;
             color: white;
@@ -80,7 +87,7 @@
         }
 
         small {
-            font-size: 50%;
+            font-size: 55%;
         }
     </style>
 </head>
