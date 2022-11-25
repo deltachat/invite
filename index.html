@@ -70,7 +70,7 @@
         link.setAttribute("href", openpgp4fprStr);
 
         // todo parse link and display name
-        document.getElementById("name").innerText = searchParams.get("n");
+        document.getElementById("name").innerText = searchParams.get("n") || searchParams.get("a");
         document.getElementById("name2").innerText = searchParams.get("n");
     </script>
 </body>
