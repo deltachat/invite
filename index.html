@@ -7,10 +7,36 @@
     <meta name="apple-itunes-app" content="app-id=1459523234">
     <!-- todo generic meta tags -->
     <style>
+        :root {
+            --pad: 8px;
+        }
+
         body {
+            margin: 0;
+
             font-family: Avant Garde,Avantgarde,Century Gothic,CenturyGothic,AppleGothic,sans-serif;
             font-size: 32px;
+        }
 
+        header {
+            padding: var(--pad);
+            font-family: Arial, 'Helvetica Neue', Helvetica;
+            background: linear-gradient(120deg, rgb(119, 136, 143), rgb(54, 78, 89));
+            box-shadow: 0px 0px 3px #888;
+        }
+
+        header a {
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            margin-right: var(--pad);
         }
 
         div#box {
@@ -37,6 +63,14 @@
     </style>
 </head>
 <body>
+
+<header>
+    <a class="logo" href="https://delta.chat">
+        <img src="https://delta.chat/assets/logos/delta-chat.svg" aria-hidden="true" />
+        <span>DeltaChat</span>
+    </a>
+</header>
+
     <div id="box">
         <p>
             Say hello to
