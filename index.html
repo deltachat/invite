@@ -23,7 +23,13 @@
         }
 
         a {
-            color: inherit;
+            color: #1e6bb8;
+            text-decoration: none;
+        }
+
+        hr {
+            border: 1px solid #ddd;
+            border-bottom: none;
         }
 
         header {
@@ -31,12 +37,11 @@
             font-family: Arial, 'Helvetica Neue', Helvetica;
             background: var(--dc-gradient);
             box-shadow: 0px 0px 3px #888;
-            color: white;
         }
 
         header a {
-            text-decoration: none;
             font-weight: bold;
+            color: white;
         }
 
         .logo {
@@ -58,10 +63,8 @@
            margin-left: auto;
            margin-top: 32px;
            margin-right: auto;
-        }
 
-        p {
-            text-align: center;
+           text-align: center;
         }
 
         #dc-link {
@@ -74,6 +77,10 @@
             text-decoration: none;
             color: white;
             background: var(--dc-gradient);
+        }
+
+        small {
+            font-size: 50%;
         }
     </style>
 </head>
@@ -94,12 +101,14 @@
         </p>
 
         <p>
-            If not yet done, <a href="https://download.delta.chat" target="_blank">Install Delta Chat</a>
-        </p>
-
-        <p>
             <a id="dc-link" href="">Open chat</a>
         <p>
+
+        <hr>
+
+        <small>
+            Don't have DeltaChat? <a href="https://download.delta.chat" target="_blank">Download it here</a>.
+        </small>
     </div>
 
     <script>
