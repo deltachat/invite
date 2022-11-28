@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="apple-itunes-app" content="app-id=1459523234">
     <!-- todo generic meta tags -->
+
+    <link rel="icon" href="https://delta.chat/assets/logos/delta-chat.svg" sizes="any" type="image/svg+xml">
+    
     <style>
         :root {
             --pad: 8px;
@@ -130,7 +133,7 @@
         link.setAttribute("href", openpgp4fprStr);
 
         // todo parse link and display name
-        document.getElementById("name").innerText = searchParams.get("n");
+        document.getElementById("name").innerText = searchParams.get("n") || searchParams.get("a");
     </script>
 </body>
 </html>
