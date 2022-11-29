@@ -13,6 +13,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+    - run: ls -la && ls -la ..
     - name: Upload
       uses: horochx/deploy-via-scp@v1.0.1
       with:
