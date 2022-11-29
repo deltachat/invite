@@ -1,0 +1,26 @@
+name: Deploy main Branch
+
+on:
+  push:
+    branches:
+      - main
+      - new-deployment
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - run: cd ..
+    - name: Upload
+      uses: horochx/deploy-via-scp@v1.0.1
+      with:
+        user: ${{ secrets.USERNAME }}
+        key: ${{ secrets.KEY }}
+        host: "delta.chat"
+        port: 22
+        local: "invite"
+        remote: "/var/www/html/"
+
