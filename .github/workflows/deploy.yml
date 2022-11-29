@@ -12,8 +12,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
-    - run: ls -la && ls -la ..
+    - uses: GuillaumeFalourd/clone-github-repo-action@v2
+    - run: ls -la && ls -la invite
     - name: Upload
       uses: horochx/deploy-via-scp@1.1.0
       with:
@@ -21,6 +21,6 @@ jobs:
         key: ${{ secrets.KEY }}
         host: "delta.chat"
         port: 22
-        local: "../invite"
+        local: "invite"
         remote: "/var/www/html/"
 
