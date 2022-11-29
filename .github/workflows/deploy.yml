@@ -13,7 +13,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - run: ls -la && cd .. && ls -la
     - name: Upload
       uses: horochx/deploy-via-scp@v1.0.1
       with:
@@ -21,6 +20,6 @@ jobs:
         key: ${{ secrets.KEY }}
         host: "delta.chat"
         port: 22
-        local: "invite"
+        local: "../invite"
         remote: "/var/www/html/"
 
