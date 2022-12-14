@@ -105,7 +105,7 @@
 
     <div id="box">
         <p>
-            Say hello to
+            <span id="join">Say hello to</span>
             <b id="name">NAME</b>
             👋
         </p>
@@ -132,8 +132,12 @@
         var link = document.getElementById("dc-link");
         link.setAttribute("href", openpgp4fprStr);
 
+        if (searchParams.get("g")) {
+            document.getElementById("join").innerText = 'Join';
+        }
+
         // todo parse link and display name
-        document.getElementById("name").innerText = searchParams.get("n") || searchParams.get("a");
+        document.getElementById("name").innerText = searchParams.get("n") || searchParams.get("g") || searchParams.get("a");
     </script>
 </body>
 </html>
