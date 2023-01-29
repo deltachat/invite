@@ -18,6 +18,9 @@
     <meta property="twitter:site" content="@delta_chat">
 
     <link rel="icon" href="identity.svg" sizes="any" type="image/svg+xml">
+
+    <script src="https://unpkg.com/i18next@22.4.9/dist/umd/i18next.min.js"></script>
+    <script src="./i18n/en.js"></script>
     
     <style>
         :root {
@@ -109,7 +112,7 @@
 <header>
     <a class="logo" href="https://delta.chat">
         <img src="identity.svg" aria-hidden="true" />
-        <span>Delta Chat</span>
+        <span class="logo-text">Delta Chat</span>
     </a>
 </header>
 
@@ -126,12 +129,32 @@
 
         <hr>
 
-        <small>
-            Don't have Delta Chat? <a href="https://get.delta.chat" target="_blank">Download it here</a>.
+        <small class="download">
+            <span class="download-text">Don't have Delta Chat?</span>
+            <a href="https://get.delta.chat" target="_blank">Download it here</a>.
         </small>
     </div>
 
     <script>
+        i18next.init({
+            lng: (new URLSearchParams(window.location.search)).get('lang'),
+            fallbackLng: 'en',
+            resources: Object.entries(window.i18n).reduce(function (coll, [key, translation]) {
+                return Object.assign(coll, {
+                    [key]: {
+                        translation,
+                    },
+                });
+            }, {}),
+        }, function () {
+            document.querySelector('title').innerHTML = i18next.t('TitleText');
+            document.querySelector('meta[name="description"]').setAttribute('content', i18next.t('DescriptionText'));
+            document.querySelector('#join').innerHTML = i18next.t('JoinText');
+            document.querySelector('#dc-link').innerHTML = i18next.t('ChatButtonText');
+            document.querySelector('.download-text').innerHTML = i18next.t('DownloadBlurbText');
+            document.querySelector('.download a').innerHTML = i18next.t('DownloadLinkText');
+        });
+
         // convert the hash `#<FPR>&n=<NAME>...` to an `OPENPGP4FPR:<FPR>#n=<NAME>...` url
         var openpgp4fprStr = new URL(document.URL).hash.substr(1);
         openpgp4fprStr = "OPENPGP4FPR:" + openpgp4fprStr.replace(/&/, "#")

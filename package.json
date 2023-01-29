@@ -2,6 +2,9 @@
   "scripts": {
     "test": "npx playwright test"
   },
+  "dependencies": {
+    "i18next": "^22.4.9"
+  },
   "devDependencies": {
     "@playwright/test": "^1.30.0"
   }
