@@ -47,12 +47,12 @@ Object.entries(require('fs').readdirSync(require('path').join(__dirname, 'i18n')
       await expect(page.locator('#name')).toHaveText('NAME');
     });
 
-    test('localizes ChatButton', async ({ page }) => {
-      await expect(page.locator('#dc-link')).toHaveText(t('ChatButtonText'));
-    });
-
     test('localizes download', async ({ page }) => {
       await expect(page.locator('.download')).toHaveText(t('DownloadText'));
+    });
+
+    test('localizes chat', async ({ page }) => {
+      await expect(page.locator('#dc-link')).toHaveText(t('ChatText'));
     });
 
     test.skip('localizes group join', async ({ page }) => {

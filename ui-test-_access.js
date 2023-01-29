@@ -19,12 +19,12 @@ test.describe('DCInvite_Access', () => {
     await expect(page.locator('#name')).toHaveCount(1);
   });
 
-  test('shows ChatButton', async ({ page }) => {
-    await expect(page.locator('#dc-link')).toHaveCount(1);
-  });
-
   test('shows download', async ({ page }) => {
     await expect(page.locator('.download')).toHaveCount(1);
+  });
+
+  test('shows chat', async ({ page }) => {
+    await expect(page.locator('#dc-link')).toHaveCount(1);
   });
 
 });
