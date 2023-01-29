@@ -14,6 +14,10 @@ test.describe('DCInvite_Misc', () => {
       await expect(page.locator('#name')).toHaveText('');
     });
 
+    test('sets input autofocus', async ({ page }) => {
+      await expect(page.locator('input')).toHaveAttribute('autofocus', '');
+    });
+
     test.describe('enter info', () => {
 
       test('sets share-link attributes', async ({ page }) => {
