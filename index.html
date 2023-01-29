@@ -182,24 +182,6 @@
     </div>
 
     <script>
-        i18next.init({
-            lng: (new URLSearchParams(window.location.search)).get('lang'),
-            fallbackLng: 'en',
-            resources: Object.entries(window.i18n).reduce(function (coll, [key, translation]) {
-                return Object.assign(coll, {
-                    [key]: {
-                        translation,
-                    },
-                });
-            }, {}),
-        }, function () {
-            document.querySelector('title').innerHTML = i18next.t('TitleText');
-            document.querySelector('meta[name="description"]').setAttribute('content', i18next.t('DescriptionText'));
-            document.querySelector('#join').innerHTML = i18next.t('JoinText');
-            document.querySelector('#dc-link').innerHTML = i18next.t('ChatButtonText');
-            document.querySelector('.download').innerHTML = i18next.t('DownloadText');
-        });
-
         // convert the hash `#<FPR>&n=<NAME>...` to an `OPENPGP4FPR:<FPR>#n=<NAME>...` url
         var openpgp4fprStr = new URL(document.URL).hash.substr(1);
         openpgp4fprStr = "OPENPGP4FPR:" + openpgp4fprStr.replace(/&/, "#")
@@ -216,6 +198,24 @@
 
         // todo parse link and display name
         document.getElementById("name").innerText = searchParams.get("n") || searchParams.get("g") || searchParams.get("a");
+
+        i18next.init({
+            lng: (new URLSearchParams(window.location.search)).get('lang'),
+            fallbackLng: 'en',
+            resources: Object.entries(window.i18n).reduce(function (coll, [key, translation]) {
+                return Object.assign(coll, {
+                    [key]: {
+                        translation,
+                    },
+                });
+            }, {}),
+        }, function () {
+            document.querySelector('title').innerHTML = i18next.t('TitleText');
+            document.querySelector('meta[name="description"]').setAttribute('content', i18next.t('DescriptionText'));
+            document.querySelector('#join').innerHTML = searchParams.get("g") ? i18next.t('JoinGroupText') : i18next.t('JoinText');
+            document.querySelector('#dc-link').innerHTML = i18next.t('ChatButtonText');
+            document.querySelector('.download').innerHTML = i18next.t('DownloadText');
+        });
     </script>
 </body>
 </html>

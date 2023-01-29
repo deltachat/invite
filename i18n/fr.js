@@ -3,6 +3,7 @@ Object.assign((typeof window === 'undefined' ? module.exports : window).i18n = (
     TitleText: 'Connecte sur Delta Chat',
     DescriptionText: 'Delta Chat est une application de messagerie qui fonctionne par e-mail.',
     JoinText: 'Dit bonjour à',
+    JoinGroupText: 'Rejoine',
     ChatButtonText: 'Ouvrir discussion',
     DownloadText: 'Télécharge Delta Chat',
   },

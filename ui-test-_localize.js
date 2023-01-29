@@ -55,6 +55,11 @@ Object.entries(require('fs').readdirSync(require('path').join(__dirname, 'i18n')
       await expect(page.locator('.download')).toHaveText(t('DownloadText'));
     });
 
+    test.skip('localizes group join', async ({ page }) => {
+      await page.goto(kDefaultRoute + '?lang=' + lang + '#&g=' + Math.random().toString());
+      await expect(page.locator('#join')).toHaveText(t('JoinGroupText'));
+    });
+
   });
 
 });
