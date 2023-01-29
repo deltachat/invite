@@ -2,11 +2,11 @@ const kDefaultRoute = 'file://' + __dirname + '/index.html';
 
 const { test, expect } = require('@playwright/test');
 
-test.beforeEach(async ({ page }) => {
-  await page.goto(kDefaultRoute);
-});
-
 test.describe('DCInvite_Access', () => {
+
+  test.beforeEach(async ({ page }) => {
+    await page.goto(kDefaultRoute);
+  });
 
   test('shows logo', async ({ page }) => {
     await expect(page.locator('.logo')).toHaveCount(1);

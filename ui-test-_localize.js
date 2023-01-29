@@ -3,6 +3,7 @@ const kDefaultRoute = 'file://' + __dirname + '/index.html';
 const { test, expect } = require('@playwright/test');
 
 const i18next = require('i18next');
+const t = i18next.t;
 
 Object.entries(require('fs').readdirSync(require('path').join(__dirname, 'i18n')).reduce(function (coll, item) {
   return Object.assign(coll, {
@@ -10,22 +11,20 @@ Object.entries(require('fs').readdirSync(require('path').join(__dirname, 'i18n')
   });
 }, {})).forEach(function ([lang, values]) {
 
-  i18next.init({
-    lng: lang,
-    resources: {
-      [lang]: {
-        translation: values[lang],
-      },
-    },
-  });
-
-  const t = i18next.t;
-
-  test.beforeEach(async ({ page }) => {
-    await page.goto(kDefaultRoute + '?lang=' + lang);
-  });
-
   test.describe('DCInvite_Localize-' + lang, () => {
+
+    test.beforeEach(async ({ page }) => {
+      i18next.init({
+        lng: lang,
+        resources: {
+          [lang]: {
+            translation: values[lang],
+          },
+        },
+      });
+
+      await page.goto(kDefaultRoute + '?lang=' + lang);
+    });
 
     test('localizes title', async ({ page }) => {
       await expect(page).toHaveTitle(t('TitleText'));
