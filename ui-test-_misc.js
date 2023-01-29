@@ -14,6 +14,16 @@ test.describe('DCInvite_Misc', () => {
       await expect(page.locator('#name')).toHaveText('');
     });
 
+    test.describe('enter info', () => {
+
+      test('sets share-link attributes', async ({ page }) => {
+        await page.getByRole('textbox').fill('OPENPGP4FPR:F085B63BE151EF3B8ACCE5D677B218ED4BCB8DCB#a=alfa%40bravo.charlie&n=delta&i=echo&s=foxtrot')
+        await expect(page.locator('.share-link')).toHaveAttribute('target', '_blank');
+        await expect(page.locator('.share-link')).toHaveAttribute('href', '#F085B63BE151EF3B8ACCE5D677B218ED4BCB8DCB&a=alfa%40bravo.charlie&n=delta&i=echo&s=foxtrot');
+      });
+
+    });
+
   });
 
   test.describe('address', () => {

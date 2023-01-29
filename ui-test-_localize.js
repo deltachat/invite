@@ -22,41 +22,81 @@ Object.entries(require('fs').readdirSync(require('path').join(__dirname, 'i18n')
           },
         },
       });
-
-      await page.goto(kDefaultRoute + '?lang=' + lang);
     });
 
-    test('localizes title', async ({ page }) => {
-      await expect(page).toHaveTitle(t('TitleText'));
+    test.describe('general', () => {
+
+      test.beforeEach(async ({ page }) => {
+        await page.goto(kDefaultRoute + '?lang=' + lang);
+      });
+
+      test('localizes title', async ({ page }) => {
+        await expect(page).toHaveTitle(t('TitleText'));
+      });
+
+      test('localizes description', async ({ page }) => {
+        await expect(page.locator('meta[name="description"]')).toHaveAttribute('content', t('DescriptionText'));
+      });
+
+      test('localizes logo', async ({ page }) => {
+        await expect(page.locator('.logo-text')).toHaveText('Delta Chat');
+      });
+
     });
 
-    test('localizes description', async ({ page }) => {
-      await expect(page.locator('meta[name="description"]')).toHaveAttribute('content', t('DescriptionText'));
+    test.describe('without info', () => {
+
+      test.beforeEach(async ({ page }) => {
+        await page.goto(kDefaultRoute + '?lang=' + lang);
+      });
+
+      test('localizes form-blurb', async ({ page }) => {
+        await expect(page.locator('.form-blurb')).toHaveText(t('FormBlurbText'));
+      });
+
+      test('localizes step-code', async ({ page }) => {
+        await expect(await page.evaluate(() => {
+          return document.querySelector('.step-code').innerHTML
+        })).toEqual(t('StepCodeText'));
+      });
+
+      test('localizes step-paste', async ({ page }) => {
+        await expect(page.locator('.step-paste')).toHaveText(t('StepPasteText'));
+      });
+
+      test('localizes step-share', async ({ page }) => {
+        await expect(page.locator('.step-share')).toHaveText(t('StepShareText'));
+      });
+
+      test('localizes share-link', async ({ page }) => {
+        await expect(page.locator('.share-link')).toHaveText(t('ShareLinkText'));
+      });
+
     });
 
-    test('localizes logo', async ({ page }) => {
-      await expect(page.locator('.logo-text')).toHaveText('Delta Chat');
-    });
+    test.describe('with info', () => {
 
-    test('localizes join', async ({ page }) => {
-      await expect(page.locator('#join')).toHaveText(t('JoinText'));
-    });
+      test.beforeEach(async ({ page }) => {
+        await page.goto(kDefaultRoute + '?lang=' + lang + '#&a=alfa&n=' + Math.random().toString());
+      });
 
-    test.skip('localizes name', async ({ page }) => {
-      await expect(page.locator('#name')).toHaveText('NAME');
-    });
+      test('localizes join', async ({ page }) => {
+        await expect(page.locator('#join')).toHaveText(t('JoinText'));
+      });
 
-    test('localizes download', async ({ page }) => {
-      await expect(page.locator('.download')).toHaveText(t('DownloadText'));
-    });
+      test('localizes download', async ({ page }) => {
+        await expect(page.locator('.download')).toHaveText(t('DownloadText'));
+      });
 
-    test('localizes chat', async ({ page }) => {
-      await expect(page.locator('#dc-link')).toHaveText(t('ChatText'));
-    });
+      test('localizes chat', async ({ page }) => {
+        await expect(page.locator('#dc-link')).toHaveText(t('ChatText'));
+      });
 
-    test.skip('localizes group join', async ({ page }) => {
-      await page.goto(kDefaultRoute + '?lang=' + lang + '#&g=' + Math.random().toString());
-      await expect(page.locator('#join')).toHaveText(t('JoinGroupText'));
+      test.skip('localizes group join', async ({ page }) => {
+        await page.goto(kDefaultRoute + '?lang=' + lang + '#&g=' + Math.random().toString());
+        await expect(page.locator('#join')).toHaveText(t('JoinGroupText'));
+      });
+
     });
 
   });
