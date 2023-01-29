@@ -82,8 +82,15 @@
            margin-left: auto;
            margin-top: 32px;
            margin-right: auto;
+        }
 
+        #box p {
            text-align: center;
+        }
+
+        #box li {
+           font-size: 14pt;
+           margin-bottom: 40px;
         }
 
         @media (max-width: 450px) {
@@ -93,8 +100,8 @@
             }
         }
 
-        #dc-link {
-            padding: 15px;
+        #dc-link, .download {
+            padding: 10px;
             border-radius: 30px;
 
             font-weight: bold;
@@ -103,6 +110,48 @@
             text-decoration: none;
             color: white;
             background: var(--dc-gradient);
+        }
+
+        /* circle numbers for ol https://jsfiddle.net/j2gK8/  */
+
+        ol {
+            display: block;
+            list-style: none;
+            counter-reset: numList;
+            position: relative;
+            left: 100px;
+        }
+
+        @media (max-width: 450px) {
+
+            ol {
+                left: 30px;
+            }
+
+        }
+        
+        ol li {
+            display: block;
+            position: relative;
+        }
+        
+        ol li:before {
+            --circle-size: 44px;
+            counter-increment: numList;
+            content: counter(numList);
+            
+            width: var(--circle-size);
+            height: var(--circle-size);
+            line-height: var(--circle-size);
+            position: absolute;
+            left: -60px;
+            top: -10px;
+            border-radius: 999px;
+            
+            color: var(--dc-color-2);
+            background: #f4f4f4;
+            font-size: 14pt;
+            text-align: center;
         }
     </style>
 </head>
@@ -122,16 +171,14 @@
             👋
         </p>
 
-        <p>
-            <a id="dc-link" href="">Open chat</a>
-        <p>
-
-        <hr>
-
-        <small class="download">
-            <span class="download-text">Don't have Delta Chat?</span>
-            <a href="https://get.delta.chat" target="_blank">Download it here</a>.
-        </small>
+        <ol>
+            <li>
+                <a class="download" href="https://get.delta.chat" target="_blank">Download Delta Chat</a>
+            </li>
+            <li>
+                <a id="dc-link" href="">Open chat</a>
+            </li>
+        </ol>
     </div>
 
     <script>
@@ -150,8 +197,7 @@
             document.querySelector('meta[name="description"]').setAttribute('content', i18next.t('DescriptionText'));
             document.querySelector('#join').innerHTML = i18next.t('JoinText');
             document.querySelector('#dc-link').innerHTML = i18next.t('ChatButtonText');
-            document.querySelector('.download-text').innerHTML = i18next.t('DownloadBlurbText');
-            document.querySelector('.download a').innerHTML = i18next.t('DownloadLinkText');
+            document.querySelector('.download').innerHTML = i18next.t('DownloadText');
         });
 
         // convert the hash `#<FPR>&n=<NAME>...` to an `OPENPGP4FPR:<FPR>#n=<NAME>...` url

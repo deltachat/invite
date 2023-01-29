@@ -51,12 +51,8 @@ Object.entries(require('fs').readdirSync(require('path').join(__dirname, 'i18n')
       await expect(page.locator('#dc-link')).toHaveText(t('ChatButtonText'));
     });
 
-    test('localizes DownloadBlurb', async ({ page }) => {
-      await expect(page.locator('.download-text')).toHaveText(t('DownloadBlurbText'));
-    });
-
-    test('localizes DownloadLink', async ({ page }) => {
-      await expect(page.locator('.download a')).toHaveText(t('DownloadLinkText'));
+    test('localizes download', async ({ page }) => {
+      await expect(page.locator('.download')).toHaveText(t('DownloadText'));
     });
 
   });

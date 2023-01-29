@@ -24,8 +24,7 @@ test.describe('DCInvite_Access', () => {
   });
 
   test('shows download', async ({ page }) => {
-    await expect(page.locator('.download-text')).toHaveCount(1);
-    await expect(page.locator('.download a')).toHaveCount(1);
+    await expect(page.locator('.download')).toHaveCount(1);
   });
 
 });
