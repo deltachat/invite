@@ -4,7 +4,7 @@ const config = {
   testDir: '.',
   testMatch: '**/ui-test*',
   testIgnore: '**/node_modules/**',
-  timeout: 30 * 1000,
+  timeout: 5 * 1000,
   expect: {
     timeout: 5000
   },
