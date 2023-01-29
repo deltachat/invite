@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "test": "npx playwright test"
+    "start": "http-server . -p 3000",
     "test": "npx playwright test",
     "postinstall": "npx playwright install"
   },
@@ -8,6 +8,8 @@
     "i18next": "^22.4.9"
   },
   "devDependencies": {
-    "@playwright/test": "^1.30.0"
+    "@playwright/test": "^1.30.0",
+    "start-server-and-test": "latest",
+    "http-server": "latest"
   }
 }
