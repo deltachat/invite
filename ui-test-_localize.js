@@ -92,8 +92,15 @@ Object.entries(require('fs').readdirSync(require('path').join(__dirname, 'i18n')
         await expect(page.locator('#dc-link')).toHaveText(t('ChatText'));
       });
 
-      test.skip('localizes group join', async ({ page }) => {
+    });
+
+    test.describe('with info (group)', () => {
+
+      test.beforeEach(async ({ page }) => {
         await page.goto(kDefaultRoute + '?lang=' + lang + '#&g=' + Math.random().toString());
+      });
+
+      test('localizes group join', async ({ page }) => {
         await expect(page.locator('#join')).toHaveText(t('JoinGroupText'));
       });
 
