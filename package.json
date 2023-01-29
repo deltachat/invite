@@ -1,6 +1,8 @@
 {
   "scripts": {
     "test": "npx playwright test"
+    "test": "npx playwright test",
+    "postinstall": "npx playwright install"
   },
   "dependencies": {
     "i18next": "^22.4.9"
