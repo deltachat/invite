@@ -15,7 +15,7 @@ test.describe('DCInvite_Misc', () => {
     });
 
     test('sets input autofocus', async ({ page }) => {
-      await expect(page.locator('input')).toHaveAttribute('autofocus', '');
+      await expect(page.locator('textarea')).toHaveAttribute('autofocus', '');
     });
 
     test.describe('enter info', () => {

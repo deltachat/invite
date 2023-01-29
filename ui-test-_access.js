@@ -30,7 +30,7 @@ test.describe('DCInvite_Access', () => {
       await expect(page.locator('.form-blurb')).toBeVisible();
       await expect(page.locator('.step-code')).toBeVisible();
       await expect(page.locator('.step-paste')).toBeVisible();
-      await expect(page.locator('input')).toBeVisible();
+      await expect(page.locator('textarea')).toBeVisible();
       await expect(page.locator('.step-share')).toBeVisible();
       await expect(page.locator('.share-link')).toBeHidden();
     });
