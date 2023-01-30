@@ -1,10 +1,9 @@
 (function SetupPlaywright() {
-	const { chromium } = require('@playwright/test');
-	const { expect } = require('@playwright/test');
+	const { chromium, expect } = require('@playwright/test');
 
 	global.expect = expect;
 	
-	before(async() => {
+	before(async () => {
 		global.browser = await chromium.launch();
 		global.page = await browser.newPage();
 		
@@ -15,7 +14,5 @@
 		};
 	});
 
-	after(async () => {
-	  await global.browser.close();
-	});
+	after(() => global.browser.close());
 })();
