@@ -1,75 +1,57 @@
 const kDefaultRoute = 'file://' + __dirname + '/index.html';
 
-const { test, expect } = require('@playwright/test');
+describe('DCInvite_Access', () => {
 
-test.describe('DCInvite_Access', () => {
+  before(() => DCVisit(kDefaultRoute));
 
-  test.describe('general', () => {
+  it('shows logo', () => expect(page.locator('.logo')).toBeVisible());
 
-    test.beforeEach(async ({ page }) => {
-      await page.goto(kDefaultRoute);
-    });
+  it('shows logo-image', () => expect(page.locator('.logo img')).toBeVisible());
 
-    test('shows logo', async ({ page }) => {
-      await expect(page.locator('.logo')).toBeVisible();
-      await expect(page.locator('.logo img')).toBeVisible();
-      await expect(page.locator('.logo-text')).toBeVisible();
-    });
+  it('shows logo-text', () => expect(page.locator('.logo-text')).toBeVisible());
 
-  });
+  context('without info', () => {
 
-  test.describe('without info', () => {
+    it('shows form', () => expect(page.locator('form')).toBeVisible());
 
-    test.beforeEach(async ({ page }) => {
-      await page.goto(kDefaultRoute);
-    });
+    it('shows form-blurb', () => expect(page.locator('.form-blurb')).toBeVisible());
 
-    test('shows form', async ({ page }) => {
-      await expect(page.locator('form')).toBeVisible();
-      
-      await expect(page.locator('.form-blurb')).toBeVisible();
-      await expect(page.locator('.step-code')).toBeVisible();
-      await expect(page.locator('.step-paste')).toBeVisible();
-      await expect(page.locator('textarea')).toBeVisible();
-      await expect(page.locator('.step-share')).toBeVisible();
-      await expect(page.locator('.share-link')).toBeHidden();
-    });
+    it('shows step-code', () => expect(page.locator('.step-code')).toBeVisible());
 
-    test('hides section', async ({ page }) => {
-      await expect(page.locator('section')).toBeHidden();
-    });
+    it('shows step-paste', () => expect(page.locator('.step-paste')).toBeVisible());
 
-    test.describe('enter info', () => {
+    it('shows textarea', () => expect(page.locator('textarea')).toBeVisible());
 
-      test('shows share-link', async ({ page }) => {
-        await page.getByRole('textbox').fill('OPENPGP4FPR:F085B63BE151EF3B8ACCE5D677B218ED4BCB8DCB#a=alfa%40bravo.charlie&n=delta&i=echo&s=foxtrot')
-        await expect(page.locator('.share-link')).toBeVisible();
-      });
+    it('shows step-share', () => expect(page.locator('.step-share')).toBeVisible());
+
+    it('shows share-link', () => expect(page.locator('.share-link')).toBeHidden());
+
+    it('hides section', () => expect(page.locator('.section')).toBeHidden());
+
+    context('enter info', () => {
+
+      before(() => page.getByRole('textbox').fill('OPENPGP4FPR:alfa#a=bravo%40charlie.delta&n=echo&i=foxtrot&s=golf'));
+
+      it('shows share-link', () => expect(page.locator('.share-link')).toBeVisible());
 
     });
 
   });
 
-  test.describe('with info', () => {
+  context('with info', () => {
 
-    test.beforeEach(async ({ page }) => {
-      await page.goto(kDefaultRoute + '#&a=alfa&g=bravo&n=' + Math.random().toString());
-    });
+    before(() => DCVisit(kDefaultRoute + '#&a=alfa&g=bravo&n=' + Math.random().toString()));
 
-    test('hides form', async ({ page }) => {
-      await expect(page.locator('form')).toBeHidden();
-    });
+    it('hides form', () => expect(page.locator('form')).toBeHidden());
 
-    test('shows section', async ({ page }) => {
-      await expect(page.locator('section')).toBeVisible();
+    it('shows section', () => expect(page.locator('section')).toBeVisible());
 
-      await expect(page.locator('#join')).toBeVisible();
-      await expect(page.locator('#name')).toBeVisible();
+    it('shows #join', () => expect(page.locator('#join')).toBeVisible());
+    it('shows #name', () => expect(page.locator('#name')).toBeVisible());
 
-      await expect(page.locator('.download')).toBeVisible();
-      
-      await expect(page.locator('#dc-link')).toBeVisible();
-    });
+    it('shows .download', () => expect(page.locator('.download')).toBeVisible());
+    
+    it('shows #dc-link', () => expect(page.locator('#dc-link')).toBeVisible());
 
   });
 
