@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "start": "http-server . -p 3000",
+    "test": "mocha --spec **/ui-test-*.js --file mocha-start.js --reporter dot",
+    "postinstall": "npx playwright install"
+  },
+  "dependencies": {
+    "i18next": "latest"
+  },
+  "devDependencies": {
+    "mocha": "latest",
+    "@playwright/test": "latest",
+    "http-server": "latest",
+    "start-server-and-test": "latest"
+  }
+}
