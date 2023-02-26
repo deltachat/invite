@@ -4,7 +4,7 @@ const i18next = require('i18next');
 const t = i18next.t;
 
 Object.entries(require('fs').readdirSync(require('path').join(__dirname, 'i18n')).filter(function (e) {
-  return e.match(/(\w+)\.js/i);
+  return e.match(/^[a-z]+\.js/i);
 }).reduce(function (coll, item) {
   return Object.assign(coll, {
     [item.match(/(\w+)\.js/i).pop()]: require(require('path').join(__dirname, 'i18n', item)).i18n,
