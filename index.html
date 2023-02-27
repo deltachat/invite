@@ -249,7 +249,7 @@
             document.getElementById("name").innerText = searchParams.get("n") || searchParams.get("g") || searchParams.get("a");
 
             if (isValid && document.querySelector('section').classList.contains('hidden')) {
-                document.querySelector('.share-link').setAttribute('href', '#' + inputData.replace('OPENPGP4FPR:', '').replace('#', '&'))
+                document.querySelector('.share-link').setAttribute('href', '#' + inputData.replace(/openpgp4fpr:/i, '').replace('#', '&'))
                 return document.querySelector('.share-link').classList.remove('hidden');
             }
 
