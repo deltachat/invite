@@ -235,7 +235,7 @@
         const searchParams = new URLSearchParams(window.location.hash.substr(1));
 
         function reactInput(inputData) {
-            // convert the hash `#<FPR>&n=<NAME>...` to an `OPENPGP4FPR:<FPR>#n=<NAME>...` url
+            // convert `<FPR>&n=<NAME>...` to `OPENPGP4FPR:<FPR>#n=<NAME>...` url
             const isValid = !!inputData;
             var openpgp4fprStr = "OPENPGP4FPR:" + inputData.replace(/&/, "#")
 
