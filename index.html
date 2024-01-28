@@ -264,6 +264,8 @@
             if (inputData.startsWith('https://i.delta.chat')) {
                 inputData = inputData.replace(/https:\/\/i.delta.chat\/?#/, '')
                 inputData = inputData.replace(/&/, '#')
+            } else {
+                inputData = inputData.replace(/openpgp4fpr:/i, '')
             }
 
             // '#' may be wrongly encoded to '%23' by Safari/iOS; convert it back. see issue #16
