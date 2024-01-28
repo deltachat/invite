@@ -258,8 +258,10 @@
         };
 
         function textareaInput(inputData) {
-            // first # may be wrongly encoded to %23 by safari/iOS; convert it back. see issue #16
-            inputData = inputData.replace(/%23/, '#')
+            // '#' may be wrongly encoded to '%23' by Safari/iOS; convert it back. see issue #16
+            if (inputData.indexOf('#') == -1) {
+                inputData = inputData.replace(/%23/, '#')
+            }
 
             reactInput(inputData)
         }
