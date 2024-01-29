@@ -212,7 +212,7 @@
             
         </form>
 
-        <section> 
+        <div id="say-hello">
         <p>
             <span id="join">Say hello to</span>
             <b id="name">NAME</b>
@@ -227,7 +227,8 @@
                 <a id="dc-link" href="">Open chat</a>
             </li>
         </ol>
-        </section>
+
+        </div>
     </div>
 
     <script>
@@ -247,7 +248,7 @@
 
             document.getElementById("name").innerText = searchParams.get("n") || searchParams.get("g") || searchParams.get("a");
 
-            if (isValid && document.querySelector('section').classList.contains('hidden')) {
+            if (isValid && document.getElementById('say-hello').classList.contains('hidden')) {
                 document.querySelector('.share-link').setAttribute('href', '#' + inputData.replace(/openpgp4fpr:/i, '').replace('#', '&'))
                 return document.querySelector('.share-link').classList.remove('hidden');
             }
@@ -255,7 +256,7 @@
             if (isValid) {
                 document.querySelector('form').classList.add('hidden')
             } else {
-                document.querySelector('section').classList.add('hidden')
+                document.getElementById('say-hello').classList.add('hidden')
             }
         };
 
