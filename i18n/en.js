@@ -3,7 +3,7 @@ Object.assign((typeof window === 'undefined' ? module.exports : window).i18n = (
     TitleText: 'Connect on Delta Chat',
     DescriptionText: 'Delta Chat is a messaging app that works over e-mail.',
     FormBlurbText: 'Create a Delta Chat invite link',
-    StepCodeText: 'Open Delta Chat, then navigate to <code>QR code</code>, <code>Show QR Invite Code</code>, <code>Copy to Clipboard</code>',
+    StepCodeText: 'Open Delta Chat, then navigate to <b>QR code → Show QR Invite Code → Copy to Clipboard</b>',
     StepPasteText: 'Paste into the following field:',
     StepShareText: 'Share the generated link over any channel',
     ShareLinkText: 'Open link',
