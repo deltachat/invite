@@ -252,7 +252,11 @@
                 return document.querySelector('.share-link').classList.remove('hidden');
             }
 
-            (isValid ? document.querySelector('form') : document.querySelector('section')).classList.add('hidden');
+            if (isValid) {
+                document.querySelector('form').classList.add('hidden')
+            } else {
+                document.querySelector('section').classList.add('hidden')
+            }
         };
 
         // when all apps can generate invite links internally, we may decide to remove on-site generator
