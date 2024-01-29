@@ -128,7 +128,7 @@
             left: 100px;
         }
 
-        form ol {
+        ol {
             left: 30px;
             width: 80%;
         }
@@ -201,7 +201,18 @@
 </header>
 
     <div id="box">
-        <form>
+        <noscript>
+            <div>
+                <h2><b>Say Hello 👋 to ...</b> you've disabled JavaScript, no problem:</h2>
+                <ol>
+                    <li><a class="download" href="https://get.delta.chat" target="_blank">Download Delta Chat</a></li>
+                    <li><b>Copy</b> the URL of this browser window to the <b>clipboard, </b> including all text behind the <b>#</b></li>
+                    <li>In Delta Chat, select <b>QR Code → Scan QR Code → Paste from Clipboard</b> and start chatting</li>
+                </ol>
+            </div>
+        </noscript>
+
+        <form class="hidden">
 
             <h2 class="form-blurb"></h2>
 
@@ -222,7 +233,7 @@
             
         </form>
 
-        <div id="say-hello">
+        <div id="say-hello" class="hidden">
         <h2>
             <span id="join">Say hello to</span>
             <b id="name">NAME</b>
@@ -267,7 +278,7 @@
 
             document.getElementById("name").innerText = searchParams.get("n") || searchParams.get("g") || searchParams.get("a");
 
-            if (isValid && document.getElementById('say-hello').classList.contains('hidden')) {
+            if (isValid && !document.querySelector('form').classList.contains('hidden')) {
                 document.querySelector('.share-link').setAttribute('href', '#' + inputData.replace(/openpgp4fpr:/i, '').replace('#', '&'))
                 return document.querySelector('.share-link').classList.remove('hidden');
             }
@@ -278,9 +289,9 @@
                     height : 200
                 });
                 qrcode.makeCode(openpgp4fprStr);
-                document.querySelector('form').classList.add('hidden')
+                document.getElementById('say-hello').classList.remove('hidden')
             } else {
-                document.getElementById('say-hello').classList.add('hidden')
+                document.querySelector('form').classList.remove('hidden')
             }
         };
 
