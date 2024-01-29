@@ -7,7 +7,6 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="apple-itunes-app" content="app-id=1459523234">
-    <!-- todo generic meta tags -->
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="Connect on Delta Chat">
@@ -246,7 +245,6 @@
                 document.getElementById("join").innerText = 'Join';
             }
 
-            // todo parse link and display name
             document.getElementById("name").innerText = searchParams.get("n") || searchParams.get("g") || searchParams.get("a");
 
             if (isValid && document.querySelector('section').classList.contains('hidden')) {
