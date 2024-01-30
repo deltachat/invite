@@ -178,9 +178,18 @@
         }
 
         details {
-            cursor: pointer;
             margin-top: 4em;
             text-align: center;
+        }
+
+        details summary {
+            cursor: pointer;
+            font-size: 11pt;
+            text-decoration: none;
+        }
+
+        details summary:hover {
+            text-decoration: underline;
         }
 
         details #qrcode {
@@ -250,7 +259,7 @@
         </ol>
 
         <details>
-            <summary>I have Delta Chat installed on another device</summary>
+            <summary>Tap if you have Delta Chat on another device</summary>
 
             <div id="qrcode"></div>
             <p>
