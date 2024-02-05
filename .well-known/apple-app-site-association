@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["chat.delta", "chat.delta.desktop.electron"],
+        "components": [
+          {
+            "#": "*&i*",
+            "comment": "Matches any URL with a fragment that contains &i and instructs the system to open it"
+          }
+        ]
+      }
+    ]
+  }
+}
