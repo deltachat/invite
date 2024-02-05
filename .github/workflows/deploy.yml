@@ -16,7 +16,7 @@ jobs:
       with:
         owner: 'deltachat'
         repository: 'invite'
-    - run: ls -la && ls -la invite
+    - run: rm -rf invite/.git
     - name: Upload
       uses: horochx/deploy-via-scp@1.1.0
       with:
