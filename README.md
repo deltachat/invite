@@ -38,4 +38,4 @@ Even "Open Chat" should work if Delta Chat is installed.
 
 However, note, that local or other sever's links cannot open Delta Chat directly.
 
-[^1] if you want to change the qr code library `qr.min.js`, you instead need to edit it's source in src and then run `npm run build-qr-generator` to recompile it.
+[^1]: if you want to change the qr code library `qr.min.js`, you instead need to edit it's source in src and then run `npm run build-qr-generator` to recompile it.
