@@ -17,7 +17,7 @@
 
     <link rel="icon" href="identity.svg" sizes="any" type="image/svg+xml">
 
-    <script src="./qrcode.min.js"></script>
+    <script src="./qr.min.js"></script>
     <script src="./i18n/i18next.min.js"></script>
     <script src="./i18n/en.js"></script>
     <script src="./i18n/fr.js"></script>
@@ -197,10 +197,6 @@
             height:200px;
             margin: auto;
         }
-
-        #qrcode img {
-            image-rendering: pixelated;
-        }
     </style>
 </head>
 <body>
@@ -265,6 +261,7 @@
             <summary>Tap if you have Delta Chat on another device</summary>
 
             <div id="qrcode"></div>
+
             <p>
                 <i>Scan to open the chat on the other device</i>
             </p>
@@ -296,11 +293,7 @@
             }
 
             if (isValid) {
-                var qrcode = new QRCode(document.getElementById("qrcode"), {
-                    width : 200,
-                    height : 200
-                });
-                qrcode.makeCode(openpgp4fprStr);
+                QR.renderTextToElement(document.getElementById("qrcode"), openpgp4fprStr)
                 document.getElementById('say-hello').classList.remove('hidden')
             } else {
                 document.querySelector('form').classList.remove('hidden')
