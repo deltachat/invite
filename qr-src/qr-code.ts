@@ -31,5 +31,5 @@ export function renderTextToElement(element: HTMLDivElement, content: string) {
     content,
     qrcodegen.QrCode.Ecc.MEDIUM
   );
-  element.innerHTML = toSvgString(code, 4, "white", "black");
+  element.innerHTML = toSvgString(code, 2, "white", "black");
 }

@@ -3,7 +3,7 @@
     "start": "http-server . -p 3000",
     "test": "mocha --spec **/ui-test-*.js --file mocha-start.js --reporter dot",
     "postinstall": "npx playwright install chromium",
-    "build-qr-generator": "esbuild src/qr-code.ts --bundle --minify --format=iife --global-name=QR --outfile=qr.min.js --target=es2015 --banner:js='// THIS is compiled from `src/qr-code.ts` with `npm run build-qr-generator`'"
+    "build-qr-generator": "esbuild qr-src/qr-code.ts --bundle --minify --format=iife --global-name=QR --outfile=qr.min.js --target=es2015 --banner:js='// THIS is compiled from `qr-src/qr-code.ts` with `npm run build-qr-generator`'"
   },
   "dependencies": {
     "i18next": "latest"
