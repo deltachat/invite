@@ -8,7 +8,7 @@ Object.assign((typeof window === 'undefined' ? module.exports : window).i18n = (
     StepShareText: 'Поделитесь полученной ссылкой через любой канал',
     ShareLinkText: 'Открыть ссылку',
     JoinText: 'Поздороваться с',
-    JoinGroupText: 'Join',
+    JoinGroupText: 'Присоединяйтесь',
     ChatText: 'Открыть чат',
     DownloadText: 'Скачать Delta Chat',
   },
