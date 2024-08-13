@@ -19,6 +19,7 @@
 
     <script src="./qr.min.js"></script>
     <script src="./i18n/i18next.min.js"></script>
+    <script src="./i18n/i18nextBrowserLanguageDetector.min.js"></script>
     <script src="./i18n/en.js"></script>
     <script src="./i18n/fr.js"></script>
     <script src="./i18n/ru.js"></script>
@@ -322,8 +323,7 @@
 
         reactInput(window.location.hash.substr(1));
 
-        i18next.init({
-            lng: (new URLSearchParams(window.location.search)).get('lang'),
+        i18next.use(i18nextBrowserLanguageDetector).init({
             fallbackLng: 'en',
             resources: Object.entries(window.i18n).reduce(function (coll, [key, translation]) {
                 return Object.assign(coll, {
