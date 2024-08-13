@@ -324,6 +324,7 @@
         reactInput(window.location.hash.substr(1));
 
         i18next.use(i18nextBrowserLanguageDetector).init({
+            lng: (new URLSearchParams(window.location.search)).get('lang'),
             fallbackLng: 'en',
             resources: Object.entries(window.i18n).reduce(function (coll, [key, translation]) {
                 return Object.assign(coll, {
