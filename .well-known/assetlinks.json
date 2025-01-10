@@ -1,0 +1,36 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "chat.delta",
+    "sha256_cert_fingerprints":
+    ["35:5B:E2:C3:8E:C6:73:83:C1:02:FB:E0:3E:84:C4:BC:3E:6F:89:06:F8:D3:66:91:4F:84:52:82:08:13:2A:EE"]
+  }
+  },
+ {
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.b44t.messenger",
+    "sha256_cert_fingerprints":
+    ["9D:B6:67:8E:D7:4C:88:12:4B:82:5E:8F:90:50:2B:76:CD:97:C5:EC:CC:9A:A9:2F:40:33:02:71:02:D9:AA:9D"]
+  }
+  },
+  {
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "chat.delta.lite",
+    "sha256_cert_fingerprints":
+    ["A2:ED:51:6B:AB:C5:8B:3E:DD:FD:35:3A:11:A9:DA:98:1B:4D:4C:A6:EE:C8:F1:98:7D:B3:28:8C:DF:51:F0:6A"]
+  }
+  },
+  {
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "chat.delta.lite2",
+    "sha256_cert_fingerprints":
+    ["A2:ED:51:6B:AB:C5:8B:3E:DD:FD:35:3A:11:A9:DA:98:1B:4D:4C:A6:EE:C8:F1:98:7D:B3:28:8C:DF:51:F0:6A"]
+  }
+}]
