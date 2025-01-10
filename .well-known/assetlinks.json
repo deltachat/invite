@@ -32,5 +32,18 @@
     "package_name": "chat.delta.lite2",
     "sha256_cert_fingerprints":
     ["A2:ED:51:6B:AB:C5:8B:3E:DD:FD:35:3A:11:A9:DA:98:1B:4D:4C:A6:EE:C8:F1:98:7D:B3:28:8C:DF:51:F0:6A"]
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.github.arcanechat",
+      "sha256_cert_fingerprints": [
+        "47:FD:3C:0F:1A:B6:66:EC:A6:9D:7A:52:1F:C1:A4:CD:50:AC:EC:79:EB:8A:23:F8:07:A6:4A:6F:CA:31:19:BF"
+      ]
+    }
   }
-}]
+]
