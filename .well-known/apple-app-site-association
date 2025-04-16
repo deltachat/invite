@@ -2,7 +2,7 @@
   "applinks": {
     "details": [
       {
-        "appIDs": ["8Y86453UA8.chat.delta", "chat.delta.desktop.electron"],
+        "appIDs": ["8Y86453UA8.chat.delta", "chat.delta.desktop.electron", "chat.delta.desktop.tauri"],
         "components": [
           {
             "#": "*&i*",
