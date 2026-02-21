@@ -32,7 +32,7 @@ describe('DCInvite_Misc', () => {
 
     const name = Math.random().toString();
 
-    before(() => DCVisit(kDefaultRoute + '#&a=alfa&g=bravo&n=' + name));
+    before(() => DCVisit(kDefaultRoute + '#&a=alfa&n=' + name));
 
     it('binds name', () => expect(page.locator('#name')).toHaveText(name));
 
@@ -45,6 +45,36 @@ describe('DCInvite_Misc', () => {
     before(() => DCVisit(kDefaultRoute + '#&a=alfa&g=' + group));
 
     it('binds group', () => expect(page.locator('#name')).toHaveText(group));
+
+  });
+
+  context('group with name', () => {
+
+    const group = Math.random().toString();
+
+    before(() => DCVisit(kDefaultRoute + '#&a=alfa&n=username&g=' + group));
+
+    it('binds group over name', () => expect(page.locator('#name')).toHaveText(group));
+
+  });
+
+  context('broadcast', () => {
+
+    const broadcast = Math.random().toString();
+
+    before(() => DCVisit(kDefaultRoute + '#&a=alfa&b=' + broadcast));
+
+    it('binds broadcast', () => expect(page.locator('#name')).toHaveText(broadcast));
+
+  });
+
+  context('broadcast with name', () => {
+
+    const broadcast = Math.random().toString();
+
+    before(() => DCVisit(kDefaultRoute + '#&a=alfa&n=username&b=' + broadcast));
+
+    it('binds broadcast over name', () => expect(page.locator('#name')).toHaveText(broadcast));
 
   });
 
