@@ -44,7 +44,7 @@ describe('DCInvite_Misc', () => {
 
     before(() => DCVisit(kDefaultRoute + '#&a=alfa&n=username&g=' + group));
 
-    it('binds group over name', () => expect(page.locator('#name')).toHaveText(group));
+    it('binds group', () => expect(page.locator('#name')).toHaveText(group));
 
   });
 
@@ -54,7 +54,7 @@ describe('DCInvite_Misc', () => {
 
     before(() => DCVisit(kDefaultRoute + '#&a=alfa&n=username&b=' + broadcast));
 
-    it('binds broadcast over name', () => expect(page.locator('#name')).toHaveText(broadcast));
+    it('binds broadcast', () => expect(page.locator('#name')).toHaveText(broadcast));
 
   });
 
