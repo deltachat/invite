@@ -283,11 +283,11 @@
             var link = document.getElementById("dc-link");
             link.setAttribute("href", openpgp4fprStr);
 
-            if (searchParams.get("g")) {
+            if (searchParams.get("g") || searchParams.get("b")) {
                 document.getElementById("join").innerText = 'Join';
             }
 
-            document.getElementById("name").innerText = searchParams.get("n") || searchParams.get("g") || searchParams.get("a");
+            document.getElementById("name").innerText = searchParams.get("g") || searchParams.get("b") || searchParams.get("n") || searchParams.get("a");
 
             if (isValid && !document.querySelector('form').classList.contains('hidden')) {
                 document.querySelector('.share-link').setAttribute('href', '#' + inputData.replace(/openpgp4fpr:/i, '').replace('#', '&'))
@@ -343,7 +343,7 @@
             document.querySelector('.step-share').innerHTML = i18next.t('StepShareText');
             document.querySelector('.share-link').innerHTML = i18next.t('ShareLinkText');
 
-            document.querySelector('#join').innerHTML = searchParams.get("g") ? i18next.t('JoinGroupText') : i18next.t('JoinText');
+            document.querySelector('#join').innerHTML = (searchParams.get("g") || searchParams.get("b")) ? i18next.t('JoinGroupText') : i18next.t('JoinText');
             document.querySelector('#dc-link').innerHTML = i18next.t('ChatText');
             document.querySelector('.download').innerHTML = i18next.t('DownloadText');
         });

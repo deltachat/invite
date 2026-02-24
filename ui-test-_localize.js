@@ -66,6 +66,14 @@ Object.entries(require('fs').readdirSync(require('path').join(__dirname, 'i18n')
 
     });
 
+    context('with info (broadcast)', () => {
+
+      before(() => DCVisit(kDefaultRoute + '?lang=' + lang + '#&b=' + Math.random().toString()));
+
+      it('localizes broadcast join', () => expect(page.locator('#join')).toHaveText(t('JoinGroupText')));
+
+    });
+
   });
 
 });
