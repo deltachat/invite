@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,8 +18,9 @@
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
-            font-family: Arial,Avant Garde,Avantgarde,Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+            font-family: Arial, Avant Garde, Avantgarde, Century Gothic, CenturyGothic, AppleGothic, sans-serif;
             background-color: #f4f4f4;
             color: #333;
             display: flex;
@@ -26,7 +28,8 @@
             align-items: center;
             height: 100vh;
         }
-        nav{
+
+        nav {
             width: 100%;
             background-color: #159957;
             background-image: linear-gradient(120deg, #051551, #854DFF);
@@ -37,6 +40,7 @@
             left: 0;
             z-index: 1000;
         }
+
         nav .navbar {
             width: 100%;
             flex-wrap: wrap;
@@ -46,11 +50,13 @@
             margin: 0 auto;
             /* padding: 15px; */
         }
-        .logo{
+
+        .logo {
             width: 40px;
             height: auto;
             margin-right: 10px;
         }
+
         nav .navbar a {
             color: white;
             margin: 10px;
@@ -58,49 +64,112 @@
             text-align: center;
             display: inline-block;
         }
+
         .container {
             width: 90%;
-            
+
         }
+
+        .container ul {
+            list-style: none;
+            padding: 0;
+        }
+
         .container>h1 {
             margin-top: 20px;
             font-size: 2em;
         }
+
         .container div img {
             width: 150px;
             height: auto;
             margin-right: 10px;
         }
-        .download-platform>a, p, div{
+
+        .download-platform>a,
+        .download-platform>p,
+        .download-platform>div {
             display: block;
             margin-top: 10px;
         }
-        .download-platform-android>a, p, div{
+
+        .download-platform-android>a,
+        .download-platform-android>p,
+        .download-platform-android>div {
             display: block;
             margin-top: 10px;
         }
+
         .container a {
             text-decoration: none;
             color: #007BFF;
             font-size: 16px;
         }
+
         a:hover {
             text-decoration: underline;
         }
-        .download-platform{
+
+        .download-platform {
+            background-color: #ccd6fe;
+            border-radius: 10px;
+            padding: 10px;
+            display: none;
+            margin-bottom: 20px;
+        }
+
+        .download-platform div {
+            display: flex;
+            align-items: center;
+        }
+
+        .download-platform div img {
+            height: 48px;
+            width: auto;
+        }
+
+        .download-platform .download-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 48px;
+            padding: 5px;
+            background: #111;
+            color: white;
+            border: 2px solid #444;
+            box-sizing: border-box;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            line-height: 1.1;
+        }
+
+        .download-platform .download-text small {
+            font-size: 12px;
+            font-weight: normal;
+        }
+
+        .download-platform-android {
             background-color: #ccd6fe;
             border-radius: 10px;
             padding: 10px;
             display: none;
         }
-        .download-platform-android{
-            background-color: #ccd6fe;
-            border-radius: 10px;
-            padding: 10px;
+
+        #show-all-platforms a {
+            color: #333;
         }
+
+        #show-all-platforms a::before {
+            content: "▶ ";
+            margin-right: 6px;
+            color: #333;
+        }
+
         #android-header {
-           margin-top: 20px;
+            margin-top: 20px;
         }
+
         .coming-soon {
             display: flex;
             flex-direction: column;
@@ -108,28 +177,34 @@
             justify-content: center;
             text-align: center;
         }
+
         .coming-soon h1 {
             font-size: 2em;
             margin: 10px 0;
             color: #007BFF;
         }
+
         .footer-links {
             display: flex;
             justify-content: center;
             list-style-type: none;
             padding: 10px 0;
         }
+
         footer {
             margin-top: auto;
             background-color: #e3e3e3;
             color: white;
             text-align: center;
-            padding: 10px;    
+            padding: 10px;
             width: 100%;
         }
-        footer p, li {
+
+        footer p,
+        li {
             color: #333;
         }
+
         footer .footer-links li a {
             margin: 0 10px;
             color: #007BFF;
@@ -143,6 +218,7 @@
                 min-width: 580px;
                 max-width: 800px;
             }
+
             nav .navbar {
                 width: 50%;
                 flex-wrap: nowrap;
@@ -150,6 +226,7 @@
         }
     </style>
 </head>
+
 <body>
     <nav>
         <div class="navbar">
@@ -163,25 +240,24 @@
     <div class="container">
         <h1>Download</h1>
         <div class="download-platforms">
-            
+
             <div id="macos" class="download-platform ">
                 <h3>macOS</h3>
-                <div class="coming-soon">
-                    <h1>👍</h1>
-                    <p>WE'RE STILL</p>
-                    <h1>Cooking Our App.</h1>
-                    <p>For MacOS</p>
+                <div>
+                    <a href=""><img src="https://delta.chat/assets/badges/mac-appstore.svg" alt=""></a>
+                    <a href="https://formulae.brew.sh/cask/deltachat" class="download-text">
+                        <small>
+                            Install with
+                        </small>
+                        Homebrew
+                    </a>
                 </div>
-                <!-- <div>
-                    <a href=""><img src="https://delta.chat/assets/badges/mac-appstore.svg" alt=""></a> 
-                    <a href=""><img src="https://formulae.brew.sh/cask/deltachat" alt=""></a>
-                </div>
-                <p>Minimum requirements: macOS 10.15 Catalina</p>
-                <p>Homebrew manual install: brew install --cask deltachat</p>
+                <p>Minimum requirements: macOS 12.0 Monterey</p>
+                <p>Homebrew manual install: brew tap privitty/tap && brew install --cask privitty-chat</p>
                 <a href="">Download options without automatic updates</a>
-                <a href="">Source Code</a> -->
+                <a href="">Source Code</a>
             </div>
-            
+
             <div id="windows" class="download-platform">
                 <h3>Windows</h3>
                 <div class="coming-soon">
@@ -200,19 +276,12 @@
             </div>
             <div id="ios" class="download-platform">
                 <h3>iPhone/iPad</h3>
-                <div class="coming-soon">
-                    <h1>👍</h1>
-                    <p>WE'RE STILL</p>
-                    <h1>Cooking Our App.</h1>
-                    <p>For iPhone/iPad</p>
+                <div>
+                    <a href="https://apps.apple.com/in/app/privitty-chat/id6755228179"><img
+                            src="https://delta.chat/assets/badges/get-it-on-ios.webp" alt=""></a>
                 </div>
-                <!-- <div>
-                    <a href=""><img src="https://delta.chat/assets/badges/get-it-on-gplay.webp" alt=""></a> 
-                    <a href=""><img src="https://delta.chat/assets/badges/get-it-on-fdroid.webp" alt=""></a>
-                </div>
-                <p>Minimum requirements: Android 5.0 Lollipop</p>
-                <a href="">Download options without automatic updates</a>
-                <a href="">Source Code</a> -->
+                <p>Minimum requirements: iOS 14, iPhone 6s</p>
+                <a href="">Source Code</a>
             </div>
             <div id="linux" class="download-platform">
                 <h3>GNU/Linux</h3>
@@ -244,17 +313,22 @@
                 <a href="">Download options without automatic updates</a>
                 <a href="">Source Code</a> -->
             </div>
-            <h1 id="android-header">But hey — it’s already hot and ready on Android!</h1>
+            <!-- <h1 id="android-header">But hey — it’s already hot and ready on Android!</h1> -->
             <div id="android" class="download-platform-android">
                 <h3>Android</h3>
                 <div>
-                    <a href="https://play.google.com/store/apps/details?id=chat.delta.privitty"><img src="https://delta.chat/assets/badges/get-it-on-gplay.webp" alt=""></a> 
-                    <a href="#"><img src="https://delta.chat/assets/badges/get-it-on-fdroid.webp" alt=""></a>
+                    <a href="https://play.google.com/store/apps/details?id=chat.delta.privitty"><img
+                            src="https://delta.chat/assets/badges/get-it-on-gplay.webp" alt=""></a>
                 </div>
                 <p>Minimum requirements: Android 5.0 Lollipop</p>
                 <a href="https://github.com/Privitty/privitty-deltchat-android">Source Code</a>
             </div>
         </div>
+        <ul>
+            <li id="show-all-platforms" class="show-btn">
+                <a href="#" id="show-platforms-btn">Download options for other platforms</a>
+            </li>
+        </ul>
         <p>The desktop versions do not require Privitty Chat to be installed on a phone.</p>
     </div>
     <footer>
@@ -265,50 +339,60 @@
         </ul>
         <p>© 2025 Privitty is a registered trademark owned by Alanring Technologies PVT LTD</p>
     </footer>
-<script>
-    function detectPlatform() {
-      const userAgent = navigator.userAgent.toLowerCase();
-      const platform = navigator.platform.toLowerCase();
+    <script>
+        function detectPlatform() {
+            const userAgent = navigator.userAgent.toLowerCase();
+            const platform = navigator.platform.toLowerCase();
 
-      if (/android/.test(userAgent)) {
-        return 'android';
-      } else if (/mac/.test(platform)) {
-        return 'macos';
-      } else if (/win/.test(platform)) {
-        return 'windows';
-      } else if (/iphone|ipad|ipod/.test(userAgent)) {
-        return 'ios';
-      } else if (/linux/.test(platform)) {
-        if (userAgent.includes('ubuntu')) {
-          return 'ubuntu';
+            if (/android/.test(userAgent)) {
+                return 'android';
+            } else if (/mac/.test(platform)) {
+                return 'macos';
+            } else if (/win/.test(platform)) {
+                return 'windows';
+            } else if (/iphone|ipad|ipod/.test(userAgent)) {
+                return 'ios';
+            } else if (/linux/.test(platform)) {
+                if (userAgent.includes('ubuntu')) {
+                    return 'ubuntu';
+                }
+                return 'linux';
+            }
+            return 'unknown';
         }
-        return 'linux';
-      }
-      return 'unknown';
-    }
 
-    const platform = detectPlatform();
+        const platform = detectPlatform();
 
-    if (platform === 'android') {
-      document.getElementById('android').style.display = 'block';
-      document.getElementById('android-header').style.display = 'none';
-    } else if (platform === 'macos') {
-      document.getElementById('macos').style.display = 'block';
-    } else if (platform === 'windows') {
-      document.getElementById('windows').style.display = 'block';
-    } else if (platform === 'ios') {
-      document.getElementById('ios').style.display = 'block';
-      document.getElementById('android-header').style.display = 'none';
-    } else if (platform === 'linux') {  
-      document.getElementById('linux').style.display = 'block';
-    } else if (platform === 'ubuntu') {
-      document.getElementById('ubuntu').style.display = 'block';
-    } else if (platform === 'unknown') {
-      document.getElementById('coming-soon').style.display = 'block';
-    } else {
-      document.getElementById('coming-soon').style.display = 'block';
-    }
-    
-</script>
+        if (platform === 'android') {
+            document.getElementById('android').style.display = 'block';
+            // document.getElementById('android-header').style.display = 'none';
+        } else if (platform === 'macos') {
+            document.getElementById('macos').style.display = 'block';
+        } else if (platform === 'windows') {
+            document.getElementById('windows').style.display = 'block';
+        } else if (platform === 'ios') {
+            document.getElementById('ios').style.display = 'block';
+            // document.getElementById('android-header').style.display = 'none';
+        } else if (platform === 'linux') {
+            document.getElementById('linux').style.display = 'block';
+        } else if (platform === 'ubuntu') {
+            document.getElementById('ubuntu').style.display = 'block';
+        } else if (platform === 'unknown') {
+            document.getElementById('coming-soon').style.display = 'block';
+        } else {
+            document.getElementById('coming-soon').style.display = 'block';
+        }
+
+        const button = document.getElementById("show-platforms-btn");
+
+        button.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            document.querySelectorAll(".download-platform, #android").forEach(el => {
+                el.style.display = el.style.display === "block" ? "none" : "block";
+            });
+        });
+    </script>
 </body>
+
 </html>
