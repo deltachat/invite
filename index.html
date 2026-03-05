@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>Message privately on Privitty Chat</title>
@@ -13,7 +14,7 @@
     <meta property="og:url" content="https://i.privittytech.com">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta property="twitter:site" content="@delta_chat">
+    <meta property="twitter:site" content="@privitty_chat">
 
     <link rel="icon" href="identity.png" sizes="any" type="image/svg+xml">
 
@@ -35,10 +36,10 @@
         body {
             margin: 0;
 
-            font-family: Arial,Avant Garde,Avantgarde,Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+            font-family: Arial, Avant Garde, Avantgarde, Century Gothic, CenturyGothic, AppleGothic, sans-serif;
             font-size: 12pt;
 
-            background: url('background.jpg');
+            background: url('background.png');
             background-size: 500px;
         }
 
@@ -83,23 +84,23 @@
         }
 
         #box {
-           border-radius: 16px;
-           background: white;
-           padding: 15px;
-           box-shadow: 0px 0px 10px #ccc;
+            border-radius: 16px;
+            background: white;
+            padding: 15px;
+            box-shadow: 0px 0px 10px #ccc;
 
-           max-width: 420px;
-           margin-left: auto;
-           margin-top: 32px;
-           margin-right: auto;
+            max-width: 420px;
+            margin-left: auto;
+            margin-top: 32px;
+            margin-right: auto;
         }
 
         #box p {
-           text-align: center;
+            text-align: center;
         }
 
         #box li {
-           margin-bottom: 40px;
+            margin-bottom: 40px;
         }
 
         @media (max-width: 450px) {
@@ -109,7 +110,9 @@
             }
         }
 
-        #dc-link, .download, .share-link {
+        #dc-link,
+        .download,
+        .share-link {
             padding: 10px;
             border-radius: 30px;
             font-size: 10pt;
@@ -142,7 +145,7 @@
             }
 
             form ol {
-                left:  10px;
+                left: 10px;
             }
         }
 
@@ -202,14 +205,15 @@
         }
     </style>
 </head>
+
 <body>
 
-<header>
-    <a class="logo" href="https://privittytech.com">
-        <img src="identity.png" aria-hidden="true" />
-        <span class="logo-text">Privitty Chat</span>
-    </a>
-</header>
+    <header>
+        <a class="logo" href="https://privittytech.com">
+            <img src="identity.png" aria-hidden="true" />
+            <span class="logo-text">Privitty Chat</span>
+        </a>
+    </header>
 
     <div id="box">
         <noscript>
@@ -217,8 +221,10 @@
                 <h2><b>Say hello 👋 to ...</b> you've disabled JavaScript, no problem:</h2>
                 <ol>
                     <li><a class="download" href="./download.html" target="_blank">Download Privitty Chat</a></li>
-                    <li><b>Copy</b> the URL of this browser window to the <b>clipboard, </b> including all text behind the <b>#</b></li>
-                    <li>In Delta Chat, select <b>QR Code → Scan QR Code → Paste from Clipboard</b> and start chatting</li>
+                    <li><b>Copy</b> the URL of this browser window to the <b>clipboard, </b> including all text behind
+                        the <b>#</b></li>
+                    <li>In Delta Chat, select <b>QR Code → Scan QR Code → Paste from Clipboard</b> and start chatting
+                    </li>
                 </ol>
             </div>
         </noscript>
@@ -245,30 +251,30 @@
         </form>
 
         <div id="say-hello" class="hidden">
-        <h2>
-            <span id="join">Say hello to</span>
-            <b id="name">NAME</b>
-            👋
-        </h2>
+            <h2>
+                <span id="join">Say hello to</span>
+                <b id="name">NAME</b>
+                👋
+            </h2>
 
-        <ol>
-            <li>
-                <a class="download" href="./download.html" target="_blank">Download Privitty Chat</a>
-            </li>
-            <li>
-                <a id="dc-link" href="">Open chat</a>
-            </li>
-        </ol>
+            <ol>
+                <li>
+                    <a class="download" href="./download.html" target="_blank">Download Privitty Chat</a>
+                </li>
+                <li>
+                    <a id="dc-link" href="">Open chat</a>
+                </li>
+            </ol>
 
-        <details>
-            <summary>Tap if you have Privitty Chat on another device</summary>
+            <details>
+                <summary>Tap if you have Privitty Chat on another device</summary>
 
-            <div id="qrcode"></div>
+                <div id="qrcode"></div>
 
-            <p>
-                <i>Scan to open the chat on the other device</i>
-            </p>
-        </details>
+                <p>
+                    <i>Scan to open the chat on the other device</i>
+                </p>
+            </details>
 
         </div>
     </div>
@@ -350,4 +356,5 @@
         });
     </script>
 </body>
+
 </html>
