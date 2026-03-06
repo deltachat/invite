@@ -17,6 +17,9 @@
     <meta property="twitter:site" content="@privitty_chat">
 
     <link rel="icon" href="identity.png" sizes="any" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <script src="./qr.min.js"></script>
     <script src="./i18n/i18next.min.js"></script>
@@ -28,23 +31,27 @@
     <style>
         :root {
             --pad: 8px;
-            --dc-color-1: #051551;
-            --dc-color-2: #854DFF;
-            --dc-gradient: linear-gradient(120deg, var(--dc-color-1), var(--dc-color-2));
+            --privitty-primary: #7F66C5;
+            --privitty-primary-dark: #6b52b0;
+            --privitty-foreground: #F8F5FF;
+            --privitty-gradient: linear-gradient(135deg, var(--privitty-primary) 0%, var(--privitty-primary-dark) 100%);
         }
 
         body {
             margin: 0;
 
-            font-family: Arial, Avant Garde, Avantgarde, Century Gothic, CenturyGothic, AppleGothic, sans-serif;
-            font-size: 12pt;
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 14pt;
 
-            background: url('background.png');
+            background: var(--privitty-foreground);
+            background-image: url('background.png');
             background-size: 500px;
+            background-color: var(--privitty-foreground);
+            color: #2d2a3a;
         }
 
         a {
-            color: #1e6bb8;
+            color: var(--privitty-primary);
             text-decoration: none;
         }
 
@@ -55,10 +62,10 @@
 
         header {
             padding: var(--pad);
-            font-family: Arial, 'Helvetica Neue', Helvetica;
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
             font-size: 18pt;
-            background: var(--dc-gradient);
-            box-shadow: 0px 0px 3px #888;
+            background: var(--privitty-primary);
+            box-shadow: 0 2px 8px rgba(127, 102, 197, 0.25);
         }
 
         header a {
@@ -85,9 +92,9 @@
 
         #box {
             border-radius: 16px;
-            background: white;
-            padding: 15px;
-            box-shadow: 0px 0px 10px #ccc;
+            background: var(--privitty-foreground);
+            padding: 24px;
+            box-shadow: 0 4px 24px rgba(127, 102, 197, 0.12);
 
             max-width: 420px;
             margin-left: auto;
@@ -113,14 +120,22 @@
         #dc-link,
         .download,
         .share-link {
-            padding: 10px;
+            padding: 12px 20px;
             border-radius: 30px;
-            font-size: 10pt;
-            font-weight: bold;
+            font-size: 11pt;
+            font-weight: 600;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
             text-decoration: none;
             color: white;
-            background: var(--dc-gradient);
+            background: var(--privitty-primary);
+            transition: background 0.2s ease, transform 0.1s ease;
+        }
+
+        #dc-link:hover,
+        .download:hover,
+        .share-link:hover {
+            background: var(--privitty-primary-dark);
         }
 
         /* circle numbers for ol https://jsfiddle.net/j2gK8/  */
@@ -167,8 +182,9 @@
             top: -10px;
             border-radius: 999px;
 
-            color: var(--dc-color-2);
-            background: #f4f4f4;
+            color: var(--privitty-primary);
+            background: rgba(127, 102, 197, 0.08);
+            border: 1px solid rgba(127, 102, 197, 0.2);
             font-size: 14pt;
             text-align: center;
         }

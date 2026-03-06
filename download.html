@@ -10,6 +10,9 @@
     <meta property="og:url" content="https://i.privittytech.com">
 
     <link rel="icon" href="identity.png" sizes="any" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <title>Get Privitty Chat - Privitty Chat</title>
     <style>
@@ -20,9 +23,9 @@
         }
 
         body {
-            font-family: Arial, Avant Garde, Avantgarde, Century Gothic, CenturyGothic, AppleGothic, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #F8F5FF;
+            color: #2d2a3a;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -31,8 +34,7 @@
 
         nav {
             width: 100%;
-            background-color: #159957;
-            background-image: linear-gradient(120deg, #051551, #854DFF);
+            background-color: #7F66C5;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -102,7 +104,7 @@
 
         .container a {
             text-decoration: none;
-            color: #007BFF;
+            color: #7F66C5;
             font-size: 16px;
         }
 
@@ -111,7 +113,8 @@
         }
 
         .download-platform {
-            background-color: #ccd6fe;
+            background-color: rgba(127, 102, 197, 0.12);
+            border: 1px solid rgba(127, 102, 197, 0.2);
             border-radius: 10px;
             padding: 10px;
             display: none;
@@ -134,9 +137,9 @@
             justify-content: center;
             height: 48px;
             padding: 5px;
-            background: #111;
+            background: #7F66C5;
             color: white;
-            border: 2px solid #444;
+            border: 2px solid #6b52b0;
             box-sizing: border-box;
             border-radius: 10px;
             text-decoration: none;
@@ -150,20 +153,21 @@
         }
 
         .download-platform-android {
-            background-color: #ccd6fe;
+            background-color: rgba(127, 102, 197, 0.12);
+            border: 1px solid rgba(127, 102, 197, 0.2);
             border-radius: 10px;
             padding: 10px;
             display: none;
         }
 
         #show-all-platforms a {
-            color: #333;
+            color: #2d2a3a;
         }
 
         #show-all-platforms a::before {
             content: "▶ ";
             margin-right: 6px;
-            color: #333;
+            color: #7F66C5;
         }
 
         #android-header {
@@ -181,7 +185,7 @@
         .coming-soon h1 {
             font-size: 2em;
             margin: 10px 0;
-            color: #007BFF;
+            color: #7F66C5;
         }
 
         .footer-links {
@@ -193,7 +197,7 @@
 
         footer {
             margin-top: auto;
-            background-color: #e3e3e3;
+            background-color: #7F66C5;
             color: white;
             text-align: center;
             padding: 10px;
@@ -201,14 +205,18 @@
         }
 
         footer p,
-        li {
-            color: #333;
+        footer li {
+            color: #F8F5FF;
         }
 
         footer .footer-links li a {
             margin: 0 10px;
-            color: #007BFF;
+            color: #F8F5FF;
             text-decoration: none;
+        }
+
+        footer .footer-links li a:hover {
+            text-decoration: underline;
         }
 
         @media only screen and (min-width: 640px) {
