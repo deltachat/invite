@@ -261,12 +261,12 @@
         </ol>
 
         <details>
-            <summary>Tap if you have Delta Chat on another device</summary>
+            <summary class="other-device">Tap if you have Delta Chat on another device</summary>
 
             <div id="qrcode"></div>
 
             <p>
-                <i>Scan to open the chat on the other device</i>
+                <i class="scan-qr">Scan to open the chat on the other device</i>
             </p>
         </details>
 
@@ -347,6 +347,8 @@
             document.querySelector('#join').innerHTML = (searchParams.get("g") || searchParams.get("b")) ? i18next.t('JoinGroupText') : i18next.t('JoinText');
             document.querySelector('#dc-link').innerHTML = i18next.t('ChatText');
             document.querySelector('.download').innerHTML = i18next.t('DownloadText');
+            document.querySelector('.other-device').innerHTML = i18next.t('OtherDeviceText');
+            document.querySelector('.scan-qr').innerHTML = i18next.t('ScanQRText');
         });
     </script>
 </body>

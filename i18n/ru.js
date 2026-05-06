@@ -11,6 +11,8 @@ Object.assign((typeof window === 'undefined' ? module.exports : window).i18n = (
     JoinGroupText: 'Присоединиться',
     ChatText: 'Открыть чат',
     DownloadText: 'Скачать Delta Chat',
+    OtherDeviceText: 'Tap if you have Delta Chat on another device',
+    ScanQRText: 'Scan to open the chat on the other device',
   },
 });
 

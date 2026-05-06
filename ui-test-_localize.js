@@ -56,6 +56,10 @@ Object.entries(require('fs').readdirSync(require('path').join(__dirname, 'i18n')
 
       it('localizes chat', () => expect(page.locator('#dc-link')).toHaveText(t('ChatText')));
 
+      it('localizes other-device', () => expect(page.locator('.other-device')).toHaveText(t('OtherDeviceText')));
+
+      it('localizes scan-qr', () => expect(page.locator('.scan-qr')).toHaveText(t('ScanQRText')));
+
     });
 
     context('with info (group)', () => {
