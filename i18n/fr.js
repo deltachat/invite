@@ -8,7 +8,7 @@ Object.assign((typeof window === 'undefined' ? module.exports : window).i18n = (
     StepShareText: "Partage le lien généré sur n'importe quel canal",
     ShareLinkText: 'Ouvre lien',
     JoinText: 'Dit bonjour à',
-    JoinGroupText: 'Rejoine',
+    JoinGroupText: 'Rejoindre',
     ChatText: 'Ouvrir discussion',
     DownloadText: 'Télécharge Delta Chat',
     OtherDeviceText: 'Appuyer si vous avez Delta Chat sur un autre appareil',
