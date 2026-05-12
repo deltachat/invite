@@ -10,6 +10,8 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    environment:
+      name: "production"
 
     steps:
     - uses: GuillaumeFalourd/clone-github-repo-action@v2
