@@ -14,13 +14,13 @@ jobs:
       name: "production"
 
     steps:
-    - uses: GuillaumeFalourd/clone-github-repo-action@v2
+    - uses: GuillaumeFalourd/clone-github-repo-action@19817562c346ff60f9935158dede6c5ece8fd0ac # v2.3
       with:
         owner: 'deltachat'
         repository: 'invite'
     - run: rm -rf invite/.git
     - name: Upload
-      uses: horochx/deploy-via-scp@1.1.0
+      uses: horochx/deploy-via-scp@c82b42f002701aeca107ef7cf6ea4efe6788141e  # 1.1.0
       with:
         user: ${{ secrets.USERNAME }}
         key: ${{ secrets.KEY }}
