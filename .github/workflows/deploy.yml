@@ -6,6 +6,8 @@ on:
       - main
       - new-deployment
 
+permissions: {}
+
 jobs:
   build:
 
