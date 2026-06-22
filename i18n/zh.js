@@ -1,5 +1,5 @@
 Object.assign((typeof window === 'undefined' ? module.exports : window).i18n = (typeof window === 'undefined' ? module.exports : window).i18n || {}, {
-  'zh-Hans': {
+  'zh': {
     TitleText: '在 Delta Chat 上联系',
     DescriptionText: 'Delta Chat 是一款通过电子邮件工作的消息应用。',
     FormBlurbText: '创建 Delta Chat 邀请链接',
