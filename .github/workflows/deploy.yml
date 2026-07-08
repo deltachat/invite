@@ -26,4 +26,4 @@ jobs:
         mkdir -p "$HOME/.ssh"
         echo "${{ secrets.KEY }}" > "$HOME/.ssh/key"
         chmod 600 "$HOME/.ssh/key"
-        rsync -rILvh -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" $GITHUB_WORKSPACE/invite/* "${{ secrets.USERNAME }}@i.delta.chat:"
+        rsync -rILvh -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" $GITHUB_WORKSPACE/invite/ "${{ secrets.USERNAME }}@i.delta.chat:"
